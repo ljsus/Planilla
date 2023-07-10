@@ -159,10 +159,10 @@
                         <!-- Page Heading -->
                         <div class="d-sm-flex align-items-center justify-content-between mb-4">
                             <h1 class="h3 mb-0 text-gray-800">PLANILLA</h1>                   
-                                    <form class="navbar-text" action="logout.jsp">
-                        <a><i class="fa fa-user-circle-o" aria-hidden="true"></i> </a>
-                        <button class="btn btn-outline-danger my-2 my-sm-0 ml-2" type="submit">Log out</button>
-                    </form>
+                            <form class="navbar-text" action="logout.jsp">
+                                <a><i class="fa fa-user-circle-o" aria-hidden="true"></i> </a>
+                                <button class="btn btn-outline-danger my-2 my-sm-0 ml-2" type="submit">Log out</button>
+                            </form>
                         </div>
                         
 

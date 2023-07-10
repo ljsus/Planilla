@@ -18,7 +18,7 @@
         <!-- Custom styles for this template-->
         <link href="css/sb-admin-2.min.css" rel="stylesheet">
     </head>
-     <body>
+    <body>
     <body id="page-top">
 
         <!-- Page Wrapper -->
@@ -139,7 +139,7 @@
                     <button class="rounded-circle border-0" id="sidebarToggle"></button>
                 </div>
 
-               
+
 
             </ul>
             <!-- End of Sidebar -->
@@ -150,7 +150,7 @@
                 <!-- Main Content -->
                 <div id="content">
 
-                   
+
                     <!-- End of Topbar -->
 
                     <!-- Begin Page Content -->
@@ -159,10 +159,10 @@
                         <!-- Page Heading -->
                         <div class="d-sm-flex align-items-center justify-content-between mb-4">
                             <h1 class="h3 mb-0 text-gray-800">PLANILLA</h1>                   
-                                    <form class="navbar-text" action="logout.jsp">
-                        <a><i class="fa fa-user-circle-o" aria-hidden="true"></i> </a>
-                        <button class="btn btn-outline-danger my-2 my-sm-0 ml-2" type="submit">Log out</button>
-                    </form>
+                            <form class="navbar-text" action="logout.jsp">
+                                <a><i class="fa fa-user-circle-o" aria-hidden="true"></i> </a>
+                                <button class="btn btn-outline-danger my-2 my-sm-0 ml-2" type="submit">Log out</button>
+                            </form>
                         </div>
 
                         <!-- Content Row -->
@@ -181,13 +181,13 @@
                                     <div
                                         class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
                                         <h6 class="m-0 font-weight-bold text-primary">Earnings Overview</h6>
-                                       
+
                                     </div>
                                     <!-- Card Body -->
                                     <div class="card-body">
                                         <div class="chart-area">
                                             dsvsvsvsvsvsdv
-                                         
+
                                         </div>
                                     </div>
                                 </div>
@@ -205,15 +205,15 @@
                                                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                                 <i class="fas fa-ellipsis-v fa-sm fa-fw text-gray-400"></i>
                                             </a>
-                                            
+
                                         </div>
                                     </div>
                                     <!-- Card Body -->
                                     <div class="card-body">
                                         <div class="chart-pie pt-4 pb-2">
-                                              hgfdfghjhgfdsdfgh
+                                            hgfdfghjhgfdsdfgh
                                         </div>
-                                        
+
                                     </div>
                                 </div>
                             </div>
