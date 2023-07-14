@@ -1,8 +1,3 @@
-<%-- 
-    Document   : intra
-    Created on : 6 jul 2023, 19:03:57
-    Author     : jesus
---%>
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
@@ -10,7 +5,7 @@
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>JSP Page</title>
-        <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
+         <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
         <link
             href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i"
             rel="stylesheet">
@@ -19,7 +14,7 @@
         <link href="css/sb-admin-2.min.css" rel="stylesheet">
     </head>
     <body>
-    <body id="page-top">
+            <body id="page-top">
 
         <!-- Page Wrapper -->
         <div id="wrapper">
@@ -64,7 +59,7 @@
                         <div class="bg-white py-2 collapse-inner rounded">
                             <h6 class="collapse-header">Custom Components:</h6>
                             <a class="collapse-item" href="regEmpleado.jsp">Registrar Empleado</a>
-                            <a class="collapse-item" href="pag_plani.jsp">Planilla</a>
+                            <a class="collapse-item" href="cards.html">Cards</a>
                         </div>
                     </div>
                 </li>
@@ -141,7 +136,7 @@
 
                         <!-- Page Heading -->
                         <div class="d-sm-flex align-items-center justify-content-between mb-4">
-                            <h1 class="h3 mb-0 text-gray-800">PLANILLA</h1>                   
+                            <h1 class="h3 mb-0 text-gray-800">Registro de Empleados</h1>                   
                             <form class="navbar-text" action="logout.jsp">
                                 <a><i class="fa fa-user-circle-o" aria-hidden="true"></i> </a>
                                 <button class="btn btn-outline-danger my-2 my-sm-0 ml-2" type="submit">Log out</button>
@@ -159,7 +154,7 @@
                         <div class="row">
 
                             <!-- Area Chart -->
-                            <div class="col-xl-8 col-lg-7">
+                            <div class="col-xl-12 col-lg-12">
                                 <div class="card shadow mb-4">
                                     <!-- Card Header - Dropdown -->
                                     <div
@@ -170,37 +165,51 @@
                                     <!-- Card Body -->
                                     <div class="card-body">
                                         <div class="chart-area">
-                                            dsvsvsvsvsvsdv
+                                           
+                            <div class="text-center">
+                                <h1 class="h4 text-gray-900 mb-4">Create an Account!</h1>
+                            </div>
+                            <form class="user">
+                                <div class="form-group row">
+                                    <div class="col-sm-6 mb-3 mb-sm-0">
+                                        <input type="text" class="form-control form-control-user" id="exampleFirstName"
+                                            placeholder="First Name">
+                                    </div>
+                                    <div class="col-sm-6">
+                                        <input type="text" class="form-control form-control-user" id="exampleLastName"
+                                            placeholder="Last Name">
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <input type="email" class="form-control form-control-user" id="exampleInputEmail"
+                                        placeholder="Email Address">
+                                </div>
+                                <div class="form-group row">
+                                    <div class="col-sm-6 mb-3 mb-sm-0">
+                                        <input type="password" class="form-control form-control-user"
+                                            id="exampleInputPassword" placeholder="Password">
+                                    </div>
+                                    <div class="col-sm-6">
+                                        <input type="password" class="form-control form-control-user"
+                                            id="exampleRepeatPassword" placeholder="Repeat Password">
+                                    </div>
+                                </div>
+                                <a href="intra.jsp" class="btn btn-google btn-user btn-block">
+                                    Register Account
+                                </a>
+                             
+                              
+                            </form>
+                         
+                           
+                       
                                          
                                         </div>
                                     </div>
                                 </div>
                             </div>
 
-                            <!-- Pie Chart -->
-                            <div class="col-xl-4 col-lg-5">
-                                <div class="card shadow mb-4">
-                                    <!-- Card Header - Dropdown -->
-                                    <div
-                                        class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
-                                        <h6 class="m-0 font-weight-bold text-primary">Revenue Sources</h6>
-                                        <div class="dropdown no-arrow">
-                                            <a class="dropdown-toggle" href="#" role="button" id="dropdownMenuLink"
-                                               data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                                <i class="fas fa-ellipsis-v fa-sm fa-fw text-gray-400"></i>
-                                            </a>
-                                            
-                                        </div>
-                                    </div>
-                                    <!-- Card Body -->
-                                    <div class="card-body">
-                                        <div class="chart-pie pt-4 pb-2">
-                                              hgfdfghjhgfdsdfgh
-                                        </div>
-                                        
-                                    </div>
-                                </div>
-                            </div>
+                          
                         </div>
 
                         <!-- Content Row -->
@@ -279,5 +288,5 @@
         <script src="js/demo/chart-pie-demo.js"></script>
 
     </body>
-</body>
+    </body>
 </html>

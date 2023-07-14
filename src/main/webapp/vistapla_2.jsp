@@ -36,8 +36,7 @@
             <ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar">
 
                 <!-- Sidebar - Brand -->
-                <% String dni = (String) sesion.getAttribute("dni");%>
-                <a class="sidebar-brand d-flex align-items-center justify-content-center" href="control?opc=1&cod=<%=dni%>">
+                <a class="sidebar-brand d-flex align-items-center justify-content-center" href="vistapla.jsp">
                     <div class="sidebar-brand-icon rotate-n-15">
                         <i class="fas fa-laugh-wink"></i>
                     </div>
@@ -49,15 +48,14 @@
 
                 <!-- Nav Item - Dashboard -->
                 <li class="nav-item active">
-                    
                     <a class="nav-link" href="vistapla_1.jsp">
                         <i class="fas fa-fw fa-tachometer-alt"></i>
                         <span>Dashboard</span></a>
                 </li>
 
                 <!-- Divider -->
-
-
+       
+         
 
                 <!-- Sidebar Toggler (Sidebar) -->
                 <div class="text-center d-none d-md-inline">
@@ -112,38 +110,39 @@
                                     <div class="card-body">
                                         <div class="chart-area">
 
-                                            <%
-                                                List<Empleado> lis = (ArrayList<Empleado>) request.getAttribute("dato");
-                                                String nom = (String) request.getAttribute("dato2");
-                                            %>   
 
-                                            <h2 class="table table-striped">Planilla de <%for (Empleado x : lis) {out.print(x.getDe_empl());} %></h2>   
-                                            <table class="table table-hover">
-                                                <thead>
-                                                    <tr class="text-black-50">
-                                                        <th>AREA<th>COD<th>NOMBRES<th>DNI<th>SEGURO<th>FECHA DE INGRESO<th>NUMORO DE CONTACTO<th>CARGO<th>TIPO DE CONTRATO
-                                                </thead>
-
-
-                                                <%
-
-                                                    for (Empleado x : lis) {
-                                                        out.print("<tr><td>" + x.getDe_area() + "<td>" + x.getCo_empl() + "<td>" + x.getDe_empl() + "<td>" + x.getNro_dni()
-                                                                + "<td>" + x.getDe_segu() + "<td>" + x.getFe_ingreso() + "<td>" + x.getNro_cta() + "<td>" + x.getDe_carg() + "<td>" + x.getDe_laboral());
-                                                        String co = x.getDe_empl();
-                                                    }
-                                                    out.print("co");
-                                                %> 
-
-                                            </table>
-
+        <%
+          List<Empleado> lis=(ArrayList<Empleado>)request.getAttribute("dato");
+          String nom=(String)request.getAttribute("dato2");
+          %>   
+          
+        <h2 class="table table-striped">Planilla de <%for(Empleado x:lis){out.print(x.getDe_empl()); } %></h2>   
+        <table class="table table-hover">
+            <thead>
+                <tr class="text-black-50">
+                    <th>AREA<th>COD<th>NOMBRES<th>DNI<th>SEGURO<th>FECHA DE INGRESO<th>NUMORO DE CONTACTO<th>CARGO<th>TIPO DE CONTRATO
+            </thead>
+          
+         
+            <% 
+               
+               for(Empleado x:lis){
+               out.print("<tr><td>"+x.getDe_area()+"<td>"+x.getCo_empl()+"<td>"+x.getDe_empl()+"<td>"+x.getNro_dni()+
+               "<td>"+x.getDe_segu()+"<td>"+x.getFe_ingreso()+"<td>"+x.getNro_cta()+"<td>"+x.getDe_carg()+"<td>"+x.getDe_laboral());
+               String co=x.getDe_empl();
+                 } 
+                out.print("co");
+             %> 
+                       
+        </table>
+   
 
                                         </div>
                                     </div>
                                 </div>
                             </div>
 
-
+                          
                         </div>
 
                         <!-- Content Row -->

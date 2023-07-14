@@ -1,4 +1,5 @@
 <%@page import="java.sql.*"%>
+<%@page import="com.mysql.jdbc.Driver"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 
 <!DOCTYPE html>
@@ -108,7 +109,7 @@
                             } else {
                                 sesion.setAttribute("logueado", "1");
                                 sesion.setAttribute("dni", rs.getString("co_usua"));
-                                response.sendRedirect("vistapla.jsp");
+                                response.sendRedirect("control?opc=1&cod="+dni+"");
                             }
 
                         }
