@@ -1,11 +1,13 @@
-
+<%@page import="java.sql.*"%>
+<%@page import="com.mysql.jdbc.Driver"%>
+<%@page import="modelo.*,controlador.Negocio" %>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>JSP Page</title>
-         <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
+        <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
         <link
             href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i"
             rel="stylesheet">
@@ -14,7 +16,10 @@
         <link href="css/sb-admin-2.min.css" rel="stylesheet">
     </head>
     <body>
-            <body id="page-top">
+        <%
+            Negocio obj = new Negocio();
+        %>
+    <body id="page-top">
 
         <!-- Page Wrapper -->
         <div id="wrapper">
@@ -59,12 +64,12 @@
                         <div class="bg-white py-2 collapse-inner rounded">
                             <h6 class="collapse-header">Custom Components:</h6>
                             <a class="collapse-item" href="regEmpleado.jsp">Registrar Empleado</a>
-                            <a class="collapse-item" href="cards.html">Cards</a>
+                            <a class="collapse-item" href="pag_plani.jsp">Planilla</a>
                         </div>
                     </div>
                 </li>
 
-               
+
 
                 <!-- Divider -->
                 <hr class="sidebar-divider">
@@ -117,7 +122,7 @@
                     <button class="rounded-circle border-0" id="sidebarToggle"></button>
                 </div>
 
-               
+
 
             </ul>
             <!-- End of Sidebar -->
@@ -128,7 +133,7 @@
                 <!-- Main Content -->
                 <div id="content">
 
-                   
+
                     <!-- End of Topbar -->
 
                     <!-- Begin Page Content -->
@@ -142,7 +147,7 @@
                                 <button class="btn btn-outline-danger my-2 my-sm-0 ml-2" type="submit">Log out</button>
                             </form>
                         </div>
-                        
+
 
                         <!-- Content Row -->
                         <div class="row">
@@ -154,74 +159,134 @@
                         <div class="row">
 
                             <!-- Area Chart -->
-                            <div class="col-xl-12 col-lg-12">
-                                <div class="card shadow mb-4">
-                                    <!-- Card Header - Dropdown -->
-                                    <div
-                                        class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
-                                        <h6 class="m-0 font-weight-bold text-primary">Earnings Overview</h6>
-                                       
-                                    </div>
+
+
+                            <div class="col-xl-14 col-lg-14">
+                                <div class="card shadow mb-10">
+
                                     <!-- Card Body -->
                                     <div class="card-body">
-                                        <div class="chart-area">
-                                           
-                            <div class="text-center">
-                                <h1 class="h4 text-gray-900 mb-4">Create an Account!</h1>
-                            </div>
-                            <form class="user">
-                                <div class="form-group row">
-                                    <div class="col-sm-6 mb-3 mb-sm-0">
-                                        <input type="text" class="form-control form-control-user" id="exampleFirstName"
-                                            placeholder="First Name">
-                                    </div>
-                                    <div class="col-sm-6">
-                                        <input type="text" class="form-control form-control-user" id="exampleLastName"
-                                            placeholder="Last Name">
-                                    </div>
-                                </div>
-                                <div class="form-group">
-                                    <input type="email" class="form-control form-control-user" id="exampleInputEmail"
-                                        placeholder="Email Address">
-                                </div>
-                                <div class="form-group row">
-                                    <div class="col-sm-6 mb-3 mb-sm-0">
-                                        <input type="password" class="form-control form-control-user"
-                                            id="exampleInputPassword" placeholder="Password">
-                                    </div>
-                                    <div class="col-sm-6">
-                                        <input type="password" class="form-control form-control-user"
-                                            id="exampleRepeatPassword" placeholder="Repeat Password">
-                                    </div>
-                                </div>
-                                <a href="intra.jsp" class="btn btn-google btn-user btn-block">
-                                    Register Account
-                                </a>
-                             
-                              
-                            </form>
-                         
-                           
-                       
-                                         
+
+                                        <div class="container">
+                                            <div class="row">
+                                                <div class="col-sm-12">
+                                                    <div class="card"> 
+                                                        <form class="user" action="control" id="id_form">
+                                                            <input type="hidden" name="opc" value="2">
+                                                            <div class="form-group row">
+                                                                <div class="col-sm-6 mb-3 mb-sm-0"> 
+
+                                                                    <select name="grupo" class="btn btn-secondary dropdown-toggle">
+                                                                        <option selected>Tipo de empleado</option>
+                                                                        <%    for (grutraba x : obj.LisGrup()) {
+                                                                                out.print("<option value=" + x.getCo_grup() + ">" + x.getDe_grupo());
+                                                                            }
+                                                                        %>   
+                                                                    </select>
+                                                                </div>
+                                                            </div>
+                                                            <div class="form-group row">
+                                                                <div class="col-sm-4">
+                                                                    <input type="text" class="form-control form-control-user" name="paterno"
+                                                                           placeholder="APELLIDO PATERNO">
+                                                                </div>
+                                                                <div class="col-sm-4">
+                                                                    <input type="text" class="form-control form-control-user" name="materno"
+                                                                           placeholder="APELLIDO MATERNO">
+                                                                </div>
+                                                                <div class="col-sm-4">
+                                                                    <input type="text" class="form-control form-control-user" name="nombres"
+                                                                           placeholder="NOMBRES">
+                                                                </div>
+                                                            </div>
+                                                            <div class="form-group row">
+                                                                <div class="col-sm-6 mb-3 mb-sm-0">
+                                                                    FECHA DE NACIMIENTO
+                                                                    <input type="date" class="form-control form-control-user"
+                                                                           name="fenaci" placeholder="FECHA DE NACIMIENTO">
+                                                                </div>
+                                                                <div class="col-sm-6">
+                                                                    FECHA DE INGRESO
+                                                                    <input type="date" class="form-control form-control-user"
+                                                                           name="feingreso" placeholder="FECHA DE INGRESO">
+                                                                </div>
+                                                            </div>
+                                                            <div class="form-group row">
+                                                                <div class="col-sm-4">
+                                                                    <select class="btn btn-secondary dropdown-toggle" name="estado" id="cars">
+                                                                        <option selected>ESTADO DEL EMPLEADO</option>
+                                                                        <option value="A">ACTIVO</option>
+                                                                        <option value="I">INACTIVO</option>
+                                                                    </select>
+                                                                </div>
+                                                                <div class="col-sm-4">
+                                                                    <select class="btn btn-secondary dropdown-toggle" name="tdocu" id="cars">
+                                                                        <option selected>TIPO DE DOCUMENTO</option>
+                                                                        <option value="01">DNI</option>
+                                                                        <option value="02">CEDULA</option>
+                                                                    </select>
+                                                                </div>
+                                                                <div class="col-sm-4">
+                                                                    <input type="text" class="form-control form-control-user" name="ndocu"
+                                                                           placeholder="NUMERO DE DOCUMENTO">
+                                                                </div>
+                                                            </div>
+                                                            <div class="form-group row">
+                                                                <div class="col-sm-6 mb-3 mb-sm-0">
+                                                                    <input type="text" class="form-control form-control-user" name="direccion"
+                                                                           placeholder="DIRECCION">
+                                                                </div>
+
+                                                            </div>
+                                                            <div class="form-group row">
+                                                                <div class="col-sm-6 mb-3 mb-sm-0">
+                                                                    <input type="text" class="form-control form-control-user"
+                                                                           name="telef" placeholder="TELEFONO">
+                                                                </div>
+                                                                <div class="col-sm-6">
+                                                                    <select class="btn btn-secondary dropdown-toggle" name="genero" id="cars">
+                                                                        <option selected>GENERO</option>
+                                                                        <option value="M">MASCULINO</option>
+                                                                        <option value="F">FEMENINO</option>
+                                                                    </select>
+                                                                </div>
+                                                            </div>
+                                                            <div class="form-group row">
+                                                                <div class="col-sm-6 mb-3 mb-sm-0">
+                                                                    <input type="text" class="form-control form-control-user" name="cuenta"
+                                                                           placeholder="CUENTA BANCARIA">
+                                                                </div>
+                                                            </div>
+                                                            <div class="form-group row">
+                                                                <div class="col-sm-6 mb-3 mb-sm-0">  
+
+                                                                    <select name="seguro" class="btn btn-secondary dropdown-toggle">
+                                                                        <option selected>TIPO DE SEGURO</option>
+                                                                        <%    for (Seguro x : obj.LisSeguro()) {
+                                                                                out.print("<option value=" + x.getCo_segu() + ">" + x.getDe_segu());
+                                                                            }
+                                                                        %>   
+                                                                    </select>
+                                                                </div>
+                                                            </div>
+                                                            <div class="form-group">
+                                                                <button type="submit" class="btn btn-google btn-user btn-block" >REGISTRAR EMPLEADO</button>
+                                                            </div>
+
+
+
+                                                        </form>
+                                                    </div>
+                                                </div>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
                             </div>
-
-                          
                         </div>
 
                         <!-- Content Row -->
-                        <div class="row">
 
-                            <!-- Content Column -->
-                            <div class="col-lg-6 mb-4">
-
-
-
-                            </div>
-                        </div>
 
                     </div>
                     <!-- /.container-fluid -->
@@ -288,5 +353,5 @@
         <script src="js/demo/chart-pie-demo.js"></script>
 
     </body>
-    </body>
+</body>
 </html>

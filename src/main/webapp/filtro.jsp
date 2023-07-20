@@ -27,7 +27,7 @@
         <table class="table table-hover">
             <thead>
                 <tr class="text-black-50">
-                    <th>AREA<th>COD<th>NOMBRES<th>DNI<th>SEGURO<th>FECHA DE INGRESO
+                    <th>AREA<th>MONTO<th>CODIGO TIPO PLAN<th>FECHA PLAN<th>FECHA PAGO<th>FECHA MIGRA
             </thead>
 
 

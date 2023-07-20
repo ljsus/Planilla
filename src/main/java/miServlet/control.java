@@ -1,7 +1,5 @@
 
 package miServlet;
-
-
 import java.io.IOException;
 import java.io.PrintWriter;
 import javax.servlet.ServletException;
@@ -20,6 +18,7 @@ public class control extends HttpServlet {
         response.setContentType("text/html;charset=UTF-8");
      int op=Integer.parseInt(request.getParameter("opc"));
      if(op==1)lisemple(request, response);
+     if(op==2)adicionemple(request, response);
      if(op==3)lispla(request, response);
     
     }
@@ -38,8 +37,6 @@ public class control extends HttpServlet {
        request.setAttribute("dato", obj.LisEmple(cod));
        request.setAttribute("dato2", nom);
         request.getRequestDispatcher("/filtro.jsp").forward(request, response);
- 
-        
     }
     protected void lispla(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
@@ -48,15 +45,31 @@ public class control extends HttpServlet {
         String mes=request.getParameter("mes").trim();
         String an=request.getParameter("an").trim();
         String tipo=request.getParameter("tipo").trim();
-        
-         //cli =obj.LisPla(codi,mes,an,tipo);
        
          ses.setAttribute("cli", obj.LisPla(codi,mes,an,tipo));
-           // request.setAttribute("cli", cli);
-            
         request.getRequestDispatcher("/filtro.jsp").forward(request, response);
-      
      }
+     protected void adicionemple(HttpServletRequest request, HttpServletResponse response)
+            throws ServletException, IOException {
+      Empleado a=new Empleado();
+      a.setCo_grup(request.getParameter("grupo"));
+      a.setAp_pate(request.getParameter("paterno"));
+      a.setAp_mate(request.getParameter("materno"));
+      a.setNom(request.getParameter("nombres"));
+      a.setFe_naci(request.getParameter("fenaci"));
+      a.setFe_ingreso(request.getParameter("feingreso"));
+      a.setIn_estd(request.getParameter("estado"));
+      a.setTipo_dni(request.getParameter("tdocu"));
+       a.setNro_dni(request.getParameter("ndocu"));
+      a.setDireccion(request.getParameter("direccion"));
+      a.setTelefono(request.getParameter("telef"));
+      a.setIn_gene(request.getParameter("genero"));
+      a.setNro_cta(request.getParameter("cuenta"));
+      a.setDe_segu(request.getParameter("seguro"));
+      obj.adicionemple(a);
+      String pag="/intra.jsp";
+      request.getRequestDispatcher(pag).forward(request, response);
+    }
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
     /**

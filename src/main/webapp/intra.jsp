@@ -1,9 +1,6 @@
-<%-- 
-    Document   : intra
-    Created on : 6 jul 2023, 19:03:57
-    Author     : jesus
---%>
-
+<%@page import="java.sql.*"%>
+<%@page import="com.mysql.jdbc.Driver"%>
+<%@page import="modelo.*,controlador.Negocio" %>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
@@ -19,6 +16,9 @@
         <link href="css/sb-admin-2.min.css" rel="stylesheet">
     </head>
     <body>
+        <%
+            Negocio obj = new Negocio();
+        %> 
     <body id="page-top">
 
         <!-- Page Wrapper -->
@@ -69,7 +69,7 @@
                     </div>
                 </li>
 
-               
+
 
                 <!-- Divider -->
                 <hr class="sidebar-divider">
@@ -122,7 +122,7 @@
                     <button class="rounded-circle border-0" id="sidebarToggle"></button>
                 </div>
 
-               
+
 
             </ul>
             <!-- End of Sidebar -->
@@ -133,7 +133,7 @@
                 <!-- Main Content -->
                 <div id="content">
 
-                   
+
                     <!-- End of Topbar -->
 
                     <!-- Begin Page Content -->
@@ -147,7 +147,7 @@
                                 <button class="btn btn-outline-danger my-2 my-sm-0 ml-2" type="submit">Log out</button>
                             </form>
                         </div>
-                        
+
 
                         <!-- Content Row -->
                         <div class="row">
@@ -164,15 +164,25 @@
                                     <!-- Card Header - Dropdown -->
                                     <div
                                         class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
-                                        <h6 class="m-0 font-weight-bold text-primary">Earnings Overview</h6>
-                                       
+                                        <h6 class="m-0 font-weight-bold text-primary">Empleados</h6>
+
                                     </div>
                                     <!-- Card Body -->
                                     <div class="card-body">
-                                        <div class="chart-area">
-                                            dsvsvsvsvsvsdv
-                                         
-                                        </div>
+                                        
+                                            <table class="table table-hover">
+                                                <thead>
+                                                    <tr class="text-black-50 bg-black"><th>codigo empleado<th>Nombre<th>Dni<th>Telefono
+                                                </thead>
+                                                <%
+                                                    for (Empleado x : obj.LisTotal()) {
+                                                        out.print("<tr><td>" + x.getCo_empl() + "<td>" + x.getDe_empl()+ "<td>" + x.getNro_dni()+ "<td>" + x.getTelefono());
+                                               
+                                                        }
+                                                    %>   
+                                            </table>
+
+                                        
                                     </div>
                                 </div>
                             </div>
@@ -189,15 +199,15 @@
                                                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                                 <i class="fas fa-ellipsis-v fa-sm fa-fw text-gray-400"></i>
                                             </a>
-                                            
+
                                         </div>
                                     </div>
                                     <!-- Card Body -->
                                     <div class="card-body">
                                         <div class="chart-pie pt-4 pb-2">
-                                              hgfdfghjhgfdsdfgh
+                                            hgfdfghjhgfdsdfgh
                                         </div>
-                                        
+
                                     </div>
                                 </div>
                             </div>
