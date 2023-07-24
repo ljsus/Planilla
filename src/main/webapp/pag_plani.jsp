@@ -194,10 +194,11 @@
                                                             <!--<form action="control" >-->
                                                             <form action="control" target="win" >
                                                                 <input type="hidden" name="opc" value="3">
+                                                                
                                                                 <div class="col-md-10">
                                                                     <div class="form-group">
                                                                         <label class="control-label" for="id_esp">Especialidad</label>
-                                                                        <select name="codi" class="form-control">
+                                                                        <select name="codi" class="form-control" value="1">
                                                                             <%    for (Empleado x : obj.LisTotal()) {
                                                                                     out.print("<option value=" + x.getCo_empl() + ">" + x.getDe_empl());
                                                                                 }
@@ -237,6 +238,7 @@
                                                                 <div class="col-md-4" id="botonn">
 
                                                                     <button type="submit" class="btn btn-primary" >Buscar</button>
+                                                                    <a class="collapse-item" href="boleta.jsp">Mostrar Boleta</a>
                                                                 </div>
                                                             </form>
                                                             <iframe name="win" height="300" width="900"></iframe>

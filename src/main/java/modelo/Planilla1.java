@@ -2,28 +2,49 @@
 package modelo;
 
 
-public class Planilla extends Empleado {
+public class Planilla1 extends Empleado {
     private String co_empl;
     private String fe_mes;
      private String fe_an;
     private String co_tipo_plan;
     
      private String de_cpto;
-    private String monto;
+    private double monto;
     
     private String fe_plan;
      private String fe_pago;
     private String fe_migra;
+    private double total;
 
-    public Planilla(String co_empl, String fe_mes, String fe_an, String co_tipo_plan) {
+    public Planilla1(String co_empl, String fe_mes, String fe_an, String co_tipo_plan) {
         this.co_empl = co_empl;
         this.fe_mes = fe_mes;
         this.fe_an = fe_an;
         this.co_tipo_plan = co_tipo_plan;
     }
+    public double Total(){
+        
+        return total;
+    }
 
-    public Planilla() {
+    public Planilla1() {
       
+    }
+
+    public double getMonto() {
+        return monto;
+    }
+
+    public void setMonto(double monto) {
+        this.monto = monto;
+    }
+
+    public double getTotal() {
+        return total;
+    }
+
+    public void setTotal(double total) {
+        this.total = total;
     }
     
 
@@ -60,13 +81,7 @@ public class Planilla extends Empleado {
         this.de_cpto = de_cpto;
     }
 
-    public String getMonto() {
-        return monto;
-    }
-
-    public void setMonto(String monto) {
-        this.monto = monto;
-    }
+   
 
     public String getCo_tipo_plan() {
         return co_tipo_plan;

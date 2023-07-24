@@ -1,9 +1,10 @@
-<%-- 
-    Document   : boleta
-    Created on : 18 jul 2023, 21:18:09
-    Author     : jesus
---%>
 
+<%@page import="modelo.Planilla"%>
+<%@page import="controlador.Negocio"%>
+<%@page import="java.sql.*"%>
+<%@page import="com.mysql.jdbc.Driver"%>
+<%@page import="modelo.*,java.util.*" %>
+<%@page import="modelo.*,controlador.Negocio" %>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
@@ -25,10 +26,29 @@
         </style>
     </head>
     <body>
+        <%
+            Negocio obj = new Negocio();
+        %>
+        <%
+            HttpSession ses = request.getSession();
+            List<Planilla> lis = (ArrayList<Planilla>) ses.getAttribute("cli");
+            List<Planilla1> lis1 = (ArrayList<Planilla1>) ses.getAttribute("cli1");
+            List<Planilla2> lis2 = (ArrayList<Planilla2>) ses.getAttribute("cli2");
+            List<Planilla3> lis3 = (ArrayList<Planilla3>) ses.getAttribute("cli3");
+           double sm=0;
+           double sm1=0;
+           double sm2=0;
+           double res=0;
+        %>  
+        <div class="container">
+            <div class="jumbotron" style="padding:20px;text-align:center">
+                <h1>Mi Boleta de Pago</h1>
+                <p class="lead">En este módulo podras visualizar la boleta de pago correspondiente al mes.</p>
+
         <div class="sunarp" id="plantilla">       
             <table class="tg">
                 <tr>
-                    <th class="tg-xldj" rowspan="9"><img src="imagenes/logo.jpg" alt="150" height="300"></th>
+                    <th class="tg-xldj" rowspan="9"><img src="img/logo.jpg" alt="150" height="300"></th>
                     <th class="tg-fymr" colspan="2">ACIS PROCESS SAC</th>
                     <th class="tg-fymr" colspan="2" width="180">BOLETA DE PAGO</th>
                     <th class="tg-fymr" colspan="2">MES DE PAGO ENERO DEL 2023</th>
@@ -104,42 +124,71 @@
                     <td class="tg-0pky" colspan="2">Vacaciones Efectivas:</td>
                     <td class="tg-0pky" colspan="2">15</td>
                 </tr>                     
-                <table class="tg">
+                <table class="tg" >
                     <tr class="borde">
                         <th class="tg-7btt" colspan="3">INGRESOS</th>
                         <th class="tg-7btt" colspan="2">
                             &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;DESCUENTOS&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                         </th>
                         <th class="tg-7btt" colspan="2">APORTES</th>
-                      
                     </tr>
                     <tr class="">
-                        <td class="tg-0pky primera" colspan="2">
-                           777777777777777777777777
+                        <td class="tg-0pky primera" colspan="2" >
+                            <%
+                                for (Planilla1 x : lis1) {
+                                    out.print("<h6>" + x.getDe_cpto() + "</h6>" );
 
+                                }  
+                            %> 
+                          
+                          
+                            
+                           
                         </td>
                         <td class="tg-dvpl segunda">
-77777777777777777777777
+                            <%
+                                for (Planilla1 x : lis1){
+                                    out.print("<h6>" + x.getMonto() + "</h6>");
+                                }
+                            %>  
                         </td>
                         <td class="tg-0pky tercera">
-7777777777777777777
+                            <%
+                                for (Planilla2 x : lis2) {
+                                    out.print("<h6>" + x.getDe_cpto() + "</h6>" );
+
+                                }  
+                            %>            
                         </td>
                         <td class="tg-dvpl cuarta">
-                            55555555555555555
+                            <%
+                                for (Planilla2 x : lis2){
+                                    out.print("<h6>" + x.getMonto() + "</h6>");
+                                }
+                            %> 
                             <div id="lbl_monto_descto">
-7777777777777777777
+
                             </div>
                         </td>
                         <td class="tg-0pky quinta">
-777777777777777777
+                            <%
+                                for (Planilla3 x : lis3) {
+                                    out.print("<h6>" + x.getDe_cpto() + "</h6>" );
+
+                                }  
+                            %>    
                         </td>
                         <td class="tg-0pky sexta">
-77777777777777777777
+                            <%
+                                for (Planilla3 x : lis3){
+                                    out.print("<h6>" + x.getMonto() + "</h6>");
+                                }
+                            %> 
                         </td>
                     </tr>
-                    <tr>
+                    <tr class="">
                         <td class="tg-0pky" colspan="2">
-65555555555555555
+
                         </td>
                         <td class="tg-dvpl">
 
@@ -264,15 +313,23 @@
                         </td>
                     </tr>
                     <tr class="borde">
-                        <td class="tg-dvpl" colspan="2">Total Ingreso:<br>Total Líquido:</td>
+                        
+                        <% for (Planilla1 x : lis1) {sm=sm+x.getMonto();}%> 
+                        <% for (Planilla2 x : lis2) {sm1=sm1+x.getMonto();}%> 
+                        <% for (Planilla3 x : lis3) {sm2=sm2+x.getMonto();}%>
+                              <% res=sm-sm1; %>
+                              
+                        <td class="tg-dvpl" colspan="2">Total Ingreso:<%out.print("<h6>" + sm + "</h6>" );%> 
+                            
+                            <br>Total Líquido:<%out.print("<h6>" + res + "</h6>" );%> </td>
                         <td class="tg-dvpl">
 
                         </td>
-                        <td class="tg-6ic8">Total Descuento:</td>
+                        <td class="tg-6ic8">Total Descuento:<%out.print("<h6>" + sm1 + "</h6>" );%> </td>
                         <td class="tg-dvpl">
 
                         </td>
-                        <td class="tg-6ic8">Total Aporte:</td>
+                        <td class="tg-6ic8">Total Aporte:<%out.print("<h6>" + sm2 + "</h6>" );%></td>
                         <td class="tg-0pky">
 
                         </td>
@@ -288,5 +345,6 @@
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"
                 integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz"
         crossorigin="anonymous"></script>
+        <a class="collapse-item" href="pag_plani.jsp">Retornar....</a>
     </body>
 </html>
