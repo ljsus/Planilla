@@ -88,31 +88,13 @@
                     </a>
                     <div id="collapsePages" class="collapse" aria-labelledby="headingPages" data-parent="#accordionSidebar">
                         <div class="bg-white py-2 collapse-inner rounded">
-                            <h6 class="collapse-header">Login Screens:</h6>
-                            <a class="collapse-item" href="login.html">Login</a>
-                            <a class="collapse-item" href="register.html">Register</a>
-                            <a class="collapse-item" href="forgot-password.html">Forgot Password</a>
-                            <div class="collapse-divider"></div>
-                            <h6 class="collapse-header">Other Pages:</h6>
-                            <a class="collapse-item" href="404.html">404 Page</a>
-                            <a class="collapse-item" href="blank.html">Blank Page</a>
+                            <h6 class="collapse-header">PDF:</h6>
+                            <a  class="collapse-item" href="reporteItext.jsp" target="target">Reporte de empleados</a>
                         </div>
                     </div>
                 </li>
 
-                <!-- Nav Item - Charts -->
-                <li class="nav-item">
-                    <a class="nav-link" href="charts.html">
-                        <i class="fas fa-fw fa-chart-area"></i>
-                        <span>Charts</span></a>
-                </li>
-
-                <!-- Nav Item - Tables -->
-                <li class="nav-item">
-                    <a class="nav-link" href="tables.html">
-                        <i class="fas fa-fw fa-table"></i>
-                        <span>Tables</span></a>
-                </li>
+             
 
                 <!-- Divider -->
                 <hr class="sidebar-divider d-none d-md-block">
@@ -188,32 +170,32 @@
                                                             <div class="form-group row">
                                                                 <div class="col-sm-4">
                                                                     <input type="text" class="form-control form-control-user" name="paterno"
-                                                                           placeholder="APELLIDO PATERNO">
+                                                                           placeholder="APELLIDO PATERNO" required>
                                                                 </div>
                                                                 <div class="col-sm-4">
                                                                     <input type="text" class="form-control form-control-user" name="materno"
-                                                                           placeholder="APELLIDO MATERNO">
+                                                                           placeholder="APELLIDO MATERNO" required>
                                                                 </div>
                                                                 <div class="col-sm-4">
                                                                     <input type="text" class="form-control form-control-user" name="nombres"
-                                                                           placeholder="NOMBRES">
+                                                                           placeholder="NOMBRES" required>
                                                                 </div>
                                                             </div>
                                                             <div class="form-group row">
                                                                 <div class="col-sm-6 mb-3 mb-sm-0">
                                                                     FECHA DE NACIMIENTO
                                                                     <input type="date" class="form-control form-control-user"
-                                                                           name="fenaci" placeholder="FECHA DE NACIMIENTO">
+                                                                           name="fenaci" placeholder="FECHA DE NACIMIENTO" required>
                                                                 </div>
                                                                 <div class="col-sm-6">
                                                                     FECHA DE INGRESO
                                                                     <input type="date" class="form-control form-control-user"
-                                                                           name="feingreso" placeholder="FECHA DE INGRESO">
+                                                                           name="feingreso" placeholder="FECHA DE INGRESO" required>
                                                                 </div>
                                                             </div>
                                                             <div class="form-group row">
                                                                 <div class="col-sm-4">
-                                                                    <select class="btn btn-secondary dropdown-toggle" name="estado" id="cars">
+                                                                    <select class="btn btn-secondary dropdown-toggle" name="estado" id="cars" >
                                                                         <option selected>ESTADO DEL EMPLEADO</option>
                                                                         <option value="A">ACTIVO</option>
                                                                         <option value="I">INACTIVO</option>
@@ -228,20 +210,20 @@
                                                                 </div>
                                                                 <div class="col-sm-4">
                                                                     <input type="text" class="form-control form-control-user" name="ndocu"
-                                                                           placeholder="NUMERO DE DOCUMENTO">
+                                                                           placeholder="NUMERO DE DOCUMENTO" required>
                                                                 </div>
                                                             </div>
                                                             <div class="form-group row">
                                                                 <div class="col-sm-6 mb-3 mb-sm-0">
                                                                     <input type="text" class="form-control form-control-user" name="direccion"
-                                                                           placeholder="DIRECCION">
+                                                                           placeholder="DIRECCION" required>
                                                                 </div>
 
                                                             </div>
                                                             <div class="form-group row">
                                                                 <div class="col-sm-6 mb-3 mb-sm-0">
                                                                     <input type="text" class="form-control form-control-user"
-                                                                           name="telef" placeholder="TELEFONO">
+                                                                           name="telef" placeholder="TELEFONO" required>
                                                                 </div>
                                                                 <div class="col-sm-6">
                                                                     <select class="btn btn-secondary dropdown-toggle" name="genero" id="cars">
@@ -254,7 +236,7 @@
                                                             <div class="form-group row">
                                                                 <div class="col-sm-6 mb-3 mb-sm-0">
                                                                     <input type="text" class="form-control form-control-user" name="cuenta"
-                                                                           placeholder="CUENTA BANCARIA">
+                                                                           placeholder="CUENTA BANCARIA" required>
                                                                 </div>
                                                             </div>
                                                             <div class="form-group row">
